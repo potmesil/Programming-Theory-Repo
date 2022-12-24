@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public abstract class Shape : MonoBehaviour
 {
     [field: SerializeField] private Text Message { get; set; }
-    [field: SerializeField] protected string ColorName { get; private set; }
+    [field: SerializeField] protected string ColorName { get; private set; } // ENCAPSULATION
 
     private string Name { get; set; }
     private Color Color { get; set; }
@@ -25,7 +25,7 @@ public abstract class Shape : MonoBehaviour
 
     protected abstract string DisplayText();
 
-    private Color GetColor(string colorName)
+    private Color GetColor(string colorName) // ABSTRACTION
     {
         if (!ColorUtility.TryParseHtmlString(colorName, out var c))
         {
